@@ -22,7 +22,13 @@ async def resta(ctx, num1: int, num2: int):
 
 @bot.command()
 async def info(ctx):
-   embed = discord.Embed(title =f"{ctx.guild.name}", descripcion="culo srever a xd", timestamp=datetime.datetime.utcnow())
+   embed = discord.Embed(title =f"{ctx.guild.name}", descripcion="esto es un servidor asadsaw", timestamp=datetime.datetime.utcnow())
+   embed.add_field(name= "Server created at", value = f"{ctx.guild.created_at}")
+   embed.add_field(name= "Server owner", value = f"{ctx.guild.owner}")
+   embed.add_field(name= "Server region", value = f"{ctx.guild.region}")
+   embed.add_field(name= "Server id", value = f"{ctx.guild.id}")
+   
+
    await ctx.send(embed=embed)
 
 
@@ -39,7 +45,7 @@ async def av(ctx, member: discord.Member):
 @bot.event
 async def on_ready():
     print('el bot esta prendido')
-    game = discord.Game("comiendo")
+    game = discord.Game("comer")
     await bot.change_presence(activity=game)
 
 
