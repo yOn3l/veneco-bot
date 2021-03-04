@@ -33,7 +33,9 @@ async def info(ctx):
 
 
 @bot.command()
-async def av(ctx, member: discord.Member):
+async def av(ctx, member: discord.Member=None):
+   if member == None:
+      member = ctx.author
    avatar = discord.Embed(
       color = discord.Color.green()
    )
